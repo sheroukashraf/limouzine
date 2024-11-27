@@ -204,6 +204,6 @@ export default{
   top: 50px;
 }
 .showPopup{
-  display: block;
+  display: block !important;
 }
 </style>

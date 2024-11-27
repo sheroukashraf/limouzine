@@ -13,6 +13,7 @@
           <tr>
             <th scope="col">#</th>
             <th v-for="column in orderedColumns" :key="column.key">{{ column.key }}</th>
+            <th>حذف</th>
           </tr>
         </thead>
         <tbody>
@@ -22,15 +23,29 @@
           <tr v-else v-for="(user, index) in filteredUsers" :key="user.id">
             <th>{{ index + 1 }}</th>
             <td v-for="column in orderedColumns" :key="column.value">{{ user[column.value] || '—' }}</td>
+            <th class="text-bg-danger p-2 delete" @click="openPop(user.id)" title="حذف الصف">X</th>   
           </tr>
         </tbody>
       </table>
+      <div v-if="showPopup" class="modal showPopup" tabindex="-1">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" @click="closePopup" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+            <div class="modal-body">
+              <h2>تأكيد حذف بيانات الصف ؟</h2>
+              <button class="btn btn-danger" @click="deleteRow()">حذف</button>
+            </div>
+          </div>
+        </div>
+      </div> 
     </div>
   </div>
 </template>
 
 <script>
-import { collection, getDocs } from "firebase/firestore";
+import { collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "@/firebase";
 
 export default {
@@ -51,6 +66,9 @@ export default {
       ], // Columns in desired order
       searchQuery:"",
       selectedColumn:"الاسم",
+      userId:"",
+      selectedUser:null,
+      showPopup: false,
     };
   },
   methods: {
@@ -78,6 +96,26 @@ export default {
           return value && value.toString().toLowerCase().includes(query);
       });
     },
+    openPop(userId){
+      this.selectedUser = userId;
+      this.showPopup=true;
+      console.log(this.selectedUser);
+    },
+    async deleteRow() {
+      if(!this.selectedUser) return;
+      // Remove from Firebase
+      try {
+        await deleteDoc(doc(db, "users", this.selectedUser));
+      } catch (e) {
+        console.error("Error deleting user: ", e.message);
+      }
+      this.users = this.users.filter((user) => user.id !== this.selectedUser);
+      this.filteredUsers = this.filteredUsers.filter((user) => user.id !== this.selectedUser);
+      this.showPopup=false;
+    },
+    closePopup(){
+      this.showPopup=false;
+    }
   },
   watch: {
     searchQuery(newQuery) {
@@ -120,5 +158,11 @@ export default {
 }
 .table{
   box-shadow: 1px 1px 3px 0px #01014e;
+}
+.delete{
+  cursor: pointer;
+}
+.showPopup{
+  display: block !important;
 }
 </style>
