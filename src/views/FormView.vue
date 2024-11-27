@@ -68,7 +68,7 @@
                 />
             <button type="submit" class="btn btn-primary">إضافه</button>   
         </form>
-        <div v-if="showPopup" class="modal" tabindex="-1">
+        <div v-if="showPopup" class="modal showPopup" tabindex="-1">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
@@ -126,7 +126,7 @@ export default{
         type: Boolean,
         value:""
       },
-      showPopup:false,
+      showPopup: false,
     }
   },
     components: {
@@ -152,7 +152,8 @@ export default{
           await addDoc(collection(db, "users"), userData);
           console.log("Document successfully written!");
           console.log(db);
-          this.showPopup=true;
+          this.showPopup= true;
+        
            // Reset form fields
           this.username.value = "";
           this.title.value = "";
@@ -202,5 +203,8 @@ export default{
 .modal{
   background-color: #3333334f;
   top: 50px;
+}
+.showPopup{
+  display: block !important;
 }
 </style>
