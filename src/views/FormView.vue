@@ -152,7 +152,7 @@ export default{
           await addDoc(collection(db, "users"), userData);
           console.log("Document successfully written!");
           console.log(db);
-          this.showPopup=true;
+          this.showPopup= true;
         
            // Reset form fields
           this.username.value = "";
