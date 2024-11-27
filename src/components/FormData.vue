@@ -1,8 +1,8 @@
 
 <template>
   <div class="mb-3 row">
-    <label class="col-form-label col-sm-2 " for="text">{{ text }} </label>
-    <div class="col-sm-10">
+    <label class="col-form-label col-sm-2 col-12" for="text">{{ text }} </label>
+    <div class="col-sm-10 col-12">
         <input 
           :type="type"
           :value="value"
