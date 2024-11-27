@@ -21,7 +21,7 @@ export default {
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
-<style>
+<style scoped>
 ul{
      background-color: #212529;
     margin: 0;
@@ -52,16 +52,8 @@ ul a.router-link-active{
   font-weight: 900;
 }
 @media screen and (max-width: 480px) {
-  .contentStyle{
-    width: 100% !important;
-    padding: 10px 20px !important; 
-  }
   .navbar-brand{
     margin-top: 30px;
-  }
-  .table {
-    overflow-y: scroll;
-    display: block;
   }
 }
 </style>

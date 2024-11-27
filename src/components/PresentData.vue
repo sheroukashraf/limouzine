@@ -165,4 +165,10 @@ export default {
 .showPopup{
   display: block !important;
 }
+@media screen and (max-width: 480px) {
+  .table {
+    overflow-y: scroll;
+    display: block;
+  }
+}
 </style>

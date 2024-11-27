@@ -206,4 +206,10 @@ export default{
 .showPopup{
   display: block !important;
 }
+@media screen and (max-width: 480px) {
+  .contentStyle{
+    width: 100% !important;
+    padding: 10px 20px !important; 
+  }
+}
 </style>
