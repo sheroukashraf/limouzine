@@ -31,14 +31,14 @@
                 />
                 <FormData 
                 class="trip"
-                type="date"
+                type="text"
                 text="الرحله من"
                 name="tripfrom"
                 :value="tripfrom.value"
                 @getInput ="input"
                 />
                 <FormData 
-                type="date"
+                type="text"
                 class="trip for"
                 text="الي"
                 name="tripto"
@@ -46,7 +46,7 @@
                 @getInput ="input"
                 />
                 <FormData 
-                type="number"
+                type="date"
                 text="ميعاد الرحله"
                 name="triptime"
                 :value="triptime.value"
