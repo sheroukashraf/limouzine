@@ -1,11 +1,14 @@
 <template>
   <ul class="row">
     <li class="col-sm-10 list">
-      <router-link to="/">
+      <router-link to="/form">
         <slot tag="li"> تسجيل البيانات </slot>
       </router-link>
       <router-link to="/data">
         <slot tag="li"> بيانات العملاء </slot>
+      </router-link>
+      <router-link to="/profile">
+        <slot tag="li"> الملف الشخصي</slot>
       </router-link>
     </li>
     <div class="col-sm-2 navbar-brand p-0" href="#">

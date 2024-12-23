@@ -189,16 +189,16 @@ export default{
   width: 80%;
   justify-self: center;
   border-radius: 3px;
-  padding: 50px 100px;
+  padding: 30px 100px;
   box-shadow: 1px 1px 2px 0px #898989bf;
 }
-.trip{
+/* .trip{
   width: 52.7% !important;
   display: inline-flex !important;
-}
-.for label{
+} */
+/* .for label{
   text-align-last: center !important;
-}
+} */
 .modal{
   background-color: #3333334f;
   top: 50px;

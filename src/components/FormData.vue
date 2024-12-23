@@ -45,14 +45,14 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 form label{
   text-align-last: start;
   color: #fff;
   font-weight: 600;
+  font-size: 15px;
 }
-.trip label{
+/* .trip label{
   width: 32% !important;
 }
 .trip label:nth-last-of-type(2){
@@ -60,5 +60,5 @@ form label{
 }
 .trip .col-sm-10{
   width: 68% !important;
-}
+} */
 </style>
