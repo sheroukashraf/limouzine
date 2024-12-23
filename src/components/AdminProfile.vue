@@ -70,11 +70,9 @@ export default{
 
       if (!user) {
         this.errorMessage = 'لا يمكن العثور على المستخدم الحالي.';
-        console.error('No user found');
         return;
       }
-      console.log('Current user email:', user.email);
-      console.log('New email to update:', this.newEmail);
+
       // Step 1: Re-authenticate user
       try {
         const credential = EmailAuthProvider.credential(user.email, this.currentPassword);
