@@ -55,7 +55,7 @@ export default{
         const userCredential = await signInWithEmailAndPassword(auth, this.email, this.Password);
         const user = userCredential.user;
         console.log('Successfully logged in:', user);
-        this.$router.push("/profile");
+        this.$router.push("/data");
       } catch (error) {
         console.error("Login failed:", error.code);
         if (error.code === "auth/invalid-credential") {
