@@ -7,9 +7,9 @@
       <router-link to="/data">
         <slot tag="li"> بيانات العملاء </slot>
       </router-link>
-      <router-link to="/profile">
+      <!-- <router-link to="/profile">
         <slot tag="li"> الملف الشخصي</slot>
-      </router-link>
+      </router-link> -->
     </li>
     <div class="col-sm-2 navbar-brand p-0" href="#">
       <p>LIMOUZINE</p>
