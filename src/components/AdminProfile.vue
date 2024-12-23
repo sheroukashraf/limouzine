@@ -5,7 +5,7 @@
                 <span>مرحبًا، {{ userEmail }}</span>
                 <button class="btn btn-dark" @click="logout">تسجيل الخروج</button>
             </div>
-            <h2 class="title"> تعديل البيانات</h2>
+            <!-- <h2 class="title"> تعديل البيانات</h2>
             <form @submit.prevent="updateProfile">
                 <div class="mb-3 row">
                     <label class="col-form-label col-sm-2 col-12" for="text">تعديل البريد الالكتروني</label>
@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <button type="submit" class="btn btn-primary">تحديث البيانات</button> 
-            </form>
+            </form> -->
             <p v-if="errorMessage" class="error">{{ errorMessage }}</p>
             <p v-if="successMessage" class="success">{{ successMessage }}</p>
         </div>
