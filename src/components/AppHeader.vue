@@ -8,7 +8,7 @@
         <slot tag="li"> بيانات العملاء </slot>
       </router-link>
       <router-link to="/profile">
-        <slot tag="li"> الملف الشخصي</slot>
+        <slot tag="li"> تسجيل خروج</slot>
       </router-link>
     </li>
     <div class="col-sm-2 navbar-brand p-0" href="#">

@@ -59,7 +59,7 @@ export default{
       } catch (error) {
         console.error("Login failed:", error.code);
         if (error.code === "auth/invalid-credential") {
-          this.errorMessage = "بيانات الاعتماد غير صالحة";
+          this.errorMessage = "بيانات المستخدم غير صالحة";
         } else if (error.code === "auth/user-not-found") {
           this.errorMessage = "المستخدم غير موجود";
         } else if (error.code === "auth/wrong-Password") {
